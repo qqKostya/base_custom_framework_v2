@@ -27,4 +27,4 @@ $recent_posts = [
     ],
 ];
 
-require_once 'about.tpl.php';
+require_once './app/views/about.tpl.php';

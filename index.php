@@ -1,5 +1,7 @@
 <?php
 
+$basePath = $_SERVER['DOCUMENT_ROOT'] . '/base_custom_framework_v2';
+
 $title = 'My blog :: Home';
 
 $posts = [
@@ -53,4 +55,4 @@ $recent_posts = [
     ],
 ];
 
-require_once 'index.tpl.php';
+require_once './app/views/index.tpl.php';
