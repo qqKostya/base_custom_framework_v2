@@ -1,32 +1,8 @@
 <?php
-
-$posts = [
-    1 => [
-        'title' => 'Title 1',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-1'
-    ],
-    2 => [
-        'title' => 'Title 2',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-2'
-    ],
-    3 => [
-        'title' => 'Title 3',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-3'
-    ],
-    4 => [
-        'title' => 'Title 4',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-4'
-    ],
-    5 => [
-        'title' => 'Title 5',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-5'
-    ],
-];
+$title = 'My blog :: About';
+$post = '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio excepturi repudiandae totam! Saepe libero voluptates, culpa ullam illo explicabo harum vel alias quos quas autem ipsam, vero nulla dignissimos?</p>
+<p>Magnam, ratione eaque laudantium soluta incidunt est voluptatum repellat quisquam aspernatur, quas minima. Error voluptatem laboriosam aut. Ratione, nesciunt, quasi, esse vero quisquam quia maxime maiores perferendis ducimus doloribus magni.</p>
+<p>Itaque distinctio iste quasi quas quaerat. Quae assumenda vitae sequi fugiat beatae quibusdam enim officia. Dicta fugit aliquam distinctio at rem inventore modi quidem ullam a omnis. Doloremque, est natus!</p>';
 
 $recent_posts = [
     1 => [
@@ -51,4 +27,4 @@ $recent_posts = [
     ],
 ];
 
-require_once 'index.tpl.php';
+require_once 'about.tpl.php';

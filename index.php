@@ -1,5 +1,7 @@
 <?php
 
+$title = 'My blog :: Home';
+
 $posts = [
     1 => [
         'title' => 'Title 1',
