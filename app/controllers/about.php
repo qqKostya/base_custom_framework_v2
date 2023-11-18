@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/func.php';
 
 $title = 'My blog :: About';
 
@@ -30,4 +29,4 @@ $recent_posts = [
     ],
 ];
 
-require_once './app/views/about.tpl.php';
+require_once VIEWS . 'about.tpl.php';

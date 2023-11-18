@@ -1,7 +1,4 @@
 <?php
-require_once __DIR__ . '/func.php';
-
-$basePath = $_SERVER['DOCUMENT_ROOT'] . '/base_custom_framework_v2';
 
 $title = 'My blog :: Home';
 
@@ -56,4 +53,4 @@ $recent_posts = [
     ],
 ];
 
-require_once './app/views/index.tpl.php';
+require_once VIEWS . '/index.tpl.php';
