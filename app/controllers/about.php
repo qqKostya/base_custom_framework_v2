@@ -1,5 +1,8 @@
 <?php
+require_once __DIR__ . '/func.php';
+
 $title = 'My blog :: About';
+
 $post = '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio excepturi repudiandae totam! Saepe libero voluptates, culpa ullam illo explicabo harum vel alias quos quas autem ipsam, vero nulla dignissimos?</p>
 <p>Magnam, ratione eaque laudantium soluta incidunt est voluptatum repellat quisquam aspernatur, quas minima. Error voluptatem laboriosam aut. Ratione, nesciunt, quasi, esse vero quisquam quia maxime maiores perferendis ducimus doloribus magni.</p>
 <p>Itaque distinctio iste quasi quas quaerat. Quae assumenda vitae sequi fugiat beatae quibusdam enim officia. Dicta fugit aliquam distinctio at rem inventore modi quidem ullam a omnis. Doloremque, est natus!</p>';

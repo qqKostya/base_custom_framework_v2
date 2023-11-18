@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/func.php';
 
 $basePath = $_SERVER['DOCUMENT_ROOT'] . '/base_custom_framework_v2';
 
