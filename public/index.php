@@ -16,5 +16,7 @@ if ($uri === '') {
     require_once CONTROLLERS . '/index.php';
 } elseif ($uri === 'about.php') {
     require_once CONTROLLERS . '/about.php';
+} else {
+    require_once VIEWS . '/errors/404.tpl.php';
 }
 
