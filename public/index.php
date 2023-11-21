@@ -10,4 +10,11 @@ define("PATH", 'http://localhost:8888');
 
 require_once CORE . '/func.php';
 
-require_once CONTROLLERS . '/index.php';
+$uri = trim($_SERVER['REQUEST_URI'], '/');
+
+if ($uri === '') {
+    require_once CONTROLLERS . '/index.php';
+} elseif ($uri === 'about.php') {
+    require_once CONTROLLERS . '/about.php';
+}
+
