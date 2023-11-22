@@ -10,8 +10,14 @@ class Db
         try {
             $this->conn = new PDO($dsn, $db_config['username'], $db_config['password'], $db_config['options']);
         } catch (PDOException $e) {
-            echo "DB error: {$e->getMessage()}";
-            die;
+            abort(500);
         }
+    }
+
+    public function query($query)
+    {
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
     }
 }
