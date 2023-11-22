@@ -15,10 +15,10 @@ class Db
         }
     }
 
-    public function query($query)
+    public function query($query, $params = [])
     {
         $this->stmt = $this->connection->prepare($query);
-        $this->stmt->execute();
+        $this->stmt->execute($params);
         return $this;
     }
 
@@ -30,5 +30,14 @@ class Db
     public function find()
     {
         return $this->stmt->fetch();
+    }
+
+    public function findOrFail()
+    {
+        $res = $this->find();
+        if (!$res) {
+            abort();
+        }
+        return $res;
     }
 }
