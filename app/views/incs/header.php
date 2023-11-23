@@ -7,8 +7,8 @@
     <title><?= $title ?? 'TITLE' ?></title>
     <base href="<?= PATH ?>/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/main.css">
-    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" href="assets/img/favicon.png">
 </head>
 
 <body>
@@ -27,6 +27,8 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about">About</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" href="posts/create">New Post</a>
                             </li>
                         </ul>
                     </div>
