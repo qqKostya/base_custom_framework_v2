@@ -32,3 +32,13 @@ function load($fillable = [])
 
     return $data;
 }
+
+function old($fieldname)
+{
+    return isset($_POST[$fieldname]) ? h($_POST[$fieldname]) : '';
+}
+
+function h($str)
+{
+    return htmlspecialchars($str, ENT_QUOTES);
+}
