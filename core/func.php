@@ -26,7 +26,7 @@ function load($fillable = [])
 
     foreach ($_POST as $k => $v) {
         if (in_array($k, $fillable)) {
-            $data[$k] = $v;
+            $data[$k] = trim($v);
         }
     }
 
@@ -41,4 +41,16 @@ function old($fieldname)
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES);
+}
+
+function redirect($url = '')
+{
+    if ($url) {
+        $redirect = $url;
+    } else {
+        $redirect = $_SERVER['HTTP_REFERER'] ?? PATH;
+    }
+
+    header("Location: {$redirect}");
+    die;
 }
