@@ -4,6 +4,8 @@
  * @var Db $db
  */
 
+use myfrm\core\classes\Db;
+
 $title = 'My blog :: Home';
 
 $posts = $db->query("SELECT * FROM post ORDER BY id DESC")->findAll();
