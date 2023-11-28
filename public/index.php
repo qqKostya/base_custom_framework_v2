@@ -1,7 +1,9 @@
 <?php
 
+session_start();
 
 use myfrm\Db;
+
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @var Db $db
+ * @var myfrm\Db $db
  */
 
 
@@ -31,33 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]
     ]);
 
-    if ($validation->hasErrors()) {
-        print_arr($validation->getErrors());
-    } else {
-        echo 'SUCCESS';
-    }
-
-
-    die;
-//    if (empty($data['title'])) {
-//        $errors['title'] = 'Title is required';
-//    }
-//
-//    if (empty($data['excerpt'])) {
-//        $errors['excerpt'] = 'Excerpt is required';
-//    }
-//
-//    if (empty($data['content'])) {
-//        $errors['content'] = 'Content is required';
-//    }
-
-    if (empty($errors)) {
-        if ($db->query("INSERT INTO post (`title`, `excerpt`, `content`) VALUES (:title, :excerpt, :content)", $data)) {
-            echo 'OK';
-        } else {
-            echo 'DB error';
+    if (!$validation->hasErrors()) {
+        if (empty($errors)) {
+            if ($db->query("INSERT INTO post (`title`, `excerpt`, `content`) VALUES (:title, :excerpt, :content)", $data)) {
+                $_SESSION['success'] = 'OK';
+            } else {
+                $_SESSION['error'] = 'Error Db';
+            }
+            redirect();
         }
-//        redirect('/posts/create');
     }
 
 }
