@@ -12,6 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fillable = ['title', 'excerpt', 'content'];
     $data = load($fillable);
 
+//    [
+//        'title' => 'Explicabo Enim corp',
+//        'excerpt' => 'Expl',
+//        'content' => 'Explicabo Enim corp',
+//        'email' => 'mail@mail.com',
+//        'password' => '123456',
+//        'repassword' => '123456',
+//    ],
+
     // validation
     $validator = new Validator();
     $validation = $validator->validate($data, [

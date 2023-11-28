@@ -4,16 +4,19 @@ namespace myfrm;
 class Validator
 {
     protected array $errors = [];
-    protected array $rules_list = ['required', 'min', 'max', 'email'];
+    protected array|null $data_items;
+    protected array $rules_list = ['required', 'min', 'max', 'email', 'match'];
     protected array $messages = [
         'required' => 'The :fieldname: field is required',
         'min' => 'The :fieldname: field must be a minimun :rulevalue: characters',
         'max' => 'The :fieldname: field must be a maximum :rulevalue: characters',
         'email' => 'Not valid email',
+        'match' => 'The :fieldname: field must match :rulevalue: field',
     ];
 
     public function validate(array $data = [], array $rules = [])
     {
+        $this->data_items = $data;
         foreach ($data as $fieldname => $value) {
             if (isset($rules[$fieldname])) {
                 $this->check([
@@ -86,5 +89,10 @@ class Validator
     protected function email($value, $rule_value)
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
+
+    protected function match($value, $rule_value)
+    {
+        return $value === $this->data_items[$rule_value];
     }
 }
