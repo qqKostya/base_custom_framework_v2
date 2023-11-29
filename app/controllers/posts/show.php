@@ -13,4 +13,4 @@ $post = $db->query("SELECT * FROM post WHERE id = :id", [':id' => $id])->findOrF
 
 
 $title = "My blog :: {$post['title']}";
-require_once VIEWS . '/post.tpl.php';
+require_once VIEWS . '/posts/show.tpl.php';

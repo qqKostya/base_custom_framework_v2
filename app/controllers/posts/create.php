@@ -54,4 +54,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $title = "My blog :: New post";
-require_once VIEWS . '/posts-create.tpl.php';
+require_once VIEWS . '/posts/create.tpl.php';
