@@ -1,7 +1,8 @@
 <?php
 
-global $db;
+use myfrm\Db;
 
+$db = \myfrm\App::get(Db::class);
 
 $api_data = json_decode(file_get_contents('php://input'), 1);
 $data = $api_data ?? $_POST;
