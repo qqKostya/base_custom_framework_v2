@@ -19,6 +19,19 @@ class Router
         $matches = false;
         foreach ($this->routes as $route) {
             if (($route['uri'] === $this->uri) && ($route['method'] === strtoupper($this->method))) {
+
+                if ($route['middleware'] == 'guest') {
+                    if (checkAuth()) {
+                        redirect('/');
+                    }
+                }
+
+                if ($route['middleware'] == 'auth') {
+                    if (!checkAuth()) {
+                        redirect('/register');
+                    }
+                }
+
                 require_once CONTROLLERS . "/{$route['controller']}";
                 $matches = true;
                 break;
@@ -36,21 +49,30 @@ class Router
             'uri' => $uri,
             'controller' => $controller,
             'method' => $method,
+            'middleware' => null,
         ];
+
+        return $this;
     }
 
     public function get($uri, $controller)
     {
-        $this->add($uri, $controller, 'GET');
+        return $this->add($uri, $controller, 'GET');
     }
 
     public function post($uri, $controller)
     {
-        $this->add($uri, $controller, 'POST');
+        return $this->add($uri, $controller, 'POST');
     }
 
     public function delete($uri, $controller)
     {
-        $this->add($uri, $controller, 'DELETE');
+        return $this->add($uri, $controller, 'DELETE');
+    }
+
+    public function only($middleware)
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $middleware;
+        return $this;
     }
 }

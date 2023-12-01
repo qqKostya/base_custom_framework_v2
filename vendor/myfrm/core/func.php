@@ -79,3 +79,8 @@ function db(): \myfrm\Db
 {
     return \myfrm\App::get(\myfrm\Db::class);
 }
+
+function checkAuth()
+{
+    return isset($_SESSION['user']);
+}
