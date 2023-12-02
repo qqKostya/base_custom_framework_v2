@@ -20,16 +20,12 @@ class Router
         foreach ($this->routes as $route) {
             if (($route['uri'] === $this->uri) && ($route['method'] === strtoupper($this->method))) {
 
-                if ($route['middleware'] == 'guest') {
-                    if (checkAuth()) {
-                        redirect('/');
+                if ($route['middleware']) {
+                    $middleware = MIDDLEWARE[$route['middleware']] ?? false;
+                    if (!$middleware) {
+                        throw new \Exception("Incorrect middleware {$route['middleware']}");
                     }
-                }
-
-                if ($route['middleware'] == 'auth') {
-                    if (!checkAuth()) {
-                        redirect('/register');
-                    }
+                    (new $middleware)->handle();
                 }
 
                 require_once CONTROLLERS . "/{$route['controller']}";
