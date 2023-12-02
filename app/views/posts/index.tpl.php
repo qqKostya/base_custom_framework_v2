@@ -1,4 +1,9 @@
-<?php require_once VIEWS . '/incs/header.php'; ?>
+<?php require_once VIEWS . '/incs/header.php';
+/**
+ * @var $posts
+ * @var $pages_cnt
+ */
+?>
     <main class="main py-3">
         <div class="container">
             <div class="row">
@@ -15,7 +20,15 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
+                    <hr>
 
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <?php for ($i = 1; $i <= $pages_cnt; $i++): ?>
+                                <li class="page-item"><a class="page-link" href=<?= "?page={$i}" ?>><?= $i ?></a></li>
+                            <?php endfor; ?>
+                        </ul>
+                    </nav>
 
                 </div>
                 <?php require_once VIEWS . '/incs/sidebar.php'; ?>
