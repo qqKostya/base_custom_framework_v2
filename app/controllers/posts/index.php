@@ -17,6 +17,8 @@ $total = $db->query('SELECT COUNT(*) FROM post')->getColumn();
 $pagination = new \myfrm\Pagination((int)$page, $per_page, $total);
 print_arr($pagination);
 
+echo $pagination->getHtml();
+
 $start = $pagination->getStart();
 dump($pagination->uri);
 
