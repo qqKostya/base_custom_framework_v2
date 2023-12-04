@@ -2,6 +2,7 @@
 /**
  * @var $posts
  * @var $pages_cnt
+ * @var $pagination
  */
 ?>
     <main class="main py-3">
@@ -22,23 +23,7 @@
                     <?php endforeach; ?>
                     <hr>
 
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href=<?= "?page=1" ?> aria-label="Previous">
-                                    First page
-                                </a>
-                            </li>
-                            <?php for ($i = 1; $i <= $pages_cnt; $i++): ?>
-                                <li class="page-item"><a class="page-link" href=<?= "?page={$i}" ?>><?= $i ?></a></li>
-                            <?php endfor; ?>
-                            <li class="page-item">
-                                <a class="page-link" href=<?= "?page=$pages_cnt" ?> aria-label="Next">
-                                    Last page
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <?= $pagination ?>
 
                 </div>
                 <?php require_once VIEWS . '/incs/sidebar.php'; ?>
