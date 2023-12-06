@@ -7,7 +7,7 @@ class Auth
     public function handle()
     {
         if (!checkAuth()) {
-            redirect('/register');
+            redirect(LOGIN_PAGE);
         }
     }
 }

@@ -21,7 +21,7 @@ $router->get('about', 'about.php');
 $router->get('contact', 'contact.php');
 
 // Users
-$router->get('register', 'users/register.php')->only('guest');
-$router->post('register', 'users/store.php')->only('guest');
-$router->get('login', 'users/login.php')->only('guest');
-$router->get('logout', 'users/logout.php');
+$router->add('register', 'users/register.php', ['get', 'post'])->only('guest');
+//$router->post('register', 'users/store.php')->only('guest');
+$router->add('login', 'users/login.php', ['get', 'post'])->only('guest');
+$router->get('logout', 'users/logout.php')->only('auth');
